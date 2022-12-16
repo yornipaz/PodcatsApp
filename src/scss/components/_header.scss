@@ -2,19 +2,44 @@
 @use 'abstract/mixin'as m;
 
 .header {
-    display: flex;
-    flex-direction: column;
+
+    @include m.bgImage('../img/header.jpg', v.$secondary-opacity);
     padding: 5rem 0;
 
-    @include m.screen('desktop') {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    &__wrapper {
+
+        padding-bottom: 10rem 0;
+
+        @include m.screen('desktop') {
+
+            padding-bottom: 15rem 0;
+        }
     }
 
     &__logo {
-        width: 30rem;
+        max-width: 20rem;
+        margin: 0 auto;
+
+        @include m.screen('table') {
+            margin: 0;
+        }
     }
+
+    &__title {
+        color: v.$white;
+        font-size: 4.5rem;
+
+        @include m.screen('table') {
+            font-size: 6rem;
+            max-width: 50%;
+        }
+
+        @include m.screen('desktop') {
+            max-width: 40%;
+        }
+
+    }
+
 
 
 }
