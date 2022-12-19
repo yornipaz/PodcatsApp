@@ -1,0 +1,36 @@
+@use 'abstract/variable'as v;
+@use 'abstract/mixin'as m;
+
+.advantage {
+    background-color: v.$primary;
+
+    &__wrapper {
+        @include m.screen('table') {
+            @include m.grid(5, 4rem);
+            align-items: center;
+        }
+    }
+
+    &__content {
+        margin-bottom: 10rem;
+        grid-column: 1 / 4;
+
+        @include m.screen('table') {
+            margin-bottom: 0;
+        }
+    }
+
+    &__image {
+        grid-column: 4 / 6;
+        transition: transform .4s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+        &:hover {
+            transform: rotate(8deg) scale(1.1);
+        }
+    }
+
+    &__title {
+        @include m.headingBorder(v.$secondary, v.$white);
+    }
+
+}

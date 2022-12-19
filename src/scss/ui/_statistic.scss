@@ -1,0 +1,8 @@
+@use 'abstract/mixin'as m;
+@use 'abstract/variable'as v;
+
+.statistic {
+    &__title {
+        @include m.headingBorder(v.$secondary, v.$primary);
+    }
+}
