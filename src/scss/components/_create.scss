@@ -1,0 +1,13 @@
+@use 'abstract/mixin'as m;
+
+.create {
+    &__wrapper {
+        @include m.screen('table') {
+            @include m.grid(2, 2rem);
+            align-items: center;
+        }
+    }
+
+    &__title {}
+
+}
